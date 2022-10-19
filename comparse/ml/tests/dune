@@ -1,0 +1,19 @@
+(copy_files# src/*)
+
+(test
+ (libraries fstarlib comparse)
+ (name Comparse_Tests_TacticOutput))
+
+(env
+  (dev (flags
+    :standard
+    -safe-string
+    -g
+    -w -8-9-33-20-21-26-27-39
+  ))
+  (release (flags
+    :standard
+    -safe-string
+    -g
+    -w -8-9-33-20-21-26-27-39
+  )))

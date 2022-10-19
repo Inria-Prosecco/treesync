@@ -1,0 +1,117 @@
+{
+  "nodes": {
+    "everest": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "fstar-src": [
+          "fstar-src"
+        ],
+        "hacl-src": "hacl-src",
+        "karamel-src": "karamel-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "projects",
+        "lastModified": 1663740000,
+        "narHash": "sha256-h9q9tFR5h6m06mTtN/f00Ljq6+TxDcsN89bsDnFt5j0=",
+        "owner": "project-everest",
+        "repo": "everest-nix",
+        "rev": "6f4ff6c44aaf0203c2c2f3f528ef37bb3a7a6bb9",
+        "type": "github"
+      },
+      "original": {
+        "dir": "projects",
+        "owner": "project-everest",
+        "repo": "everest-nix",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
+    "fstar-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1664359222,
+        "narHash": "sha256-6DFIuxCbo/JV1ju+mLZ26f5Asyk4Y2iMJe4Mzcmi+gg=",
+        "owner": "FStarLang",
+        "repo": "FStar",
+        "rev": "215d10c20acef66a20043f389169f2706a3035aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FStarLang",
+        "repo": "FStar",
+        "type": "github"
+      }
+    },
+    "hacl-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1663360027,
+        "narHash": "sha256-uCLEBxJb5R7JRL/aHMN+6Ug1uzEcWjMMR3dMVWV7BYM=",
+        "owner": "project-everest",
+        "repo": "hacl-star",
+        "rev": "eb4ce1c16458babc0217e4313c138e9bae539f6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "project-everest",
+        "repo": "hacl-star",
+        "type": "github"
+      }
+    },
+    "karamel-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1663359727,
+        "narHash": "sha256-rnIShjQrawSABs545CPQFn076dABipFST3on1oWYuas=",
+        "owner": "fstarlang",
+        "repo": "karamel",
+        "rev": "9760cc3315d75cd4181db82275f79bfdf0a37b0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fstarlang",
+        "repo": "karamel",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1664177230,
+        "narHash": "sha256-eyo88ffm16I0K9cdcePbOsQg4MDjf1EgIdkGTLB/7iA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ff9793cfd1a25145a7e591af604675b3d6f68987",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "everest": "everest",
+        "fstar-src": "fstar-src",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

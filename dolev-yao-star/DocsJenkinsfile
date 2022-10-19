@@ -1,0 +1,5 @@
+// Jenkinsfile to build documentation
+@Library("fstarHelpers") _
+buildDocs(
+  excludedDirs: ["concrete/hacl-star-snapshot"]
+)
