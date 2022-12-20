@@ -1,5 +1,9 @@
 # Artifact for "TreeSync: Authenticated Group Management for Messaging Layer Security"
 
+## Link to the paper
+
+[Cryptology ePrint Archive](https://eprint.iacr.org/2022/1732)
+
 ## Functions, types, and theorems from the paper
 
 Section 3.1: TreeSync data structures
