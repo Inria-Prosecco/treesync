@@ -1,0 +1,44 @@
+// Jenkinsfile to verify and test F* code from the dolev-yao-star repository using make.
+// Note that it uses some IDs which will only work on fjenkins.sec.uni-stuttgart.de
+// If this file is present in the root directory of a branch, Jenkins will verify the
+// code on that branch as set up below.
+
+// Settings which might differ from branch to branch
+
+// Directories to run "make" in before trying to run any tests. These are IN ADDITION
+// to the TESTING_DIRs below, e.g., for dependencies like the core model.
+// If one of these fails to 'make', the job will be failed.
+def DEPENDENCY_DIRS = ['.']
+
+// Directories which are just verified (i.e., 'make' is called there), but not tested
+// (i.e., no 'make ocaml/test.exe' and no 'ocaml/test.exe').
+def VERIFICATION_ONLY_DIRS = ['./concrete/hacl-star-snapshot']
+
+// Map from directory names to number of tests that are expected to run successful in the
+// respective directory. E.g., " 'acme': 5 " means that we expect five successful tests in
+// a directory named "acme" (the name is actually a path relative to the repository root).
+// A "successful test" is a line containing "PROTOCOL RUN (SUCCESS for jenkins):" in the
+// output of running <test_dir>/ocaml[-symbolic]/test.exe Note that each such line will be
+// counted, i.e., if a test outputs more than one such line, we have to count all of them here.
+def TESTING_DIRS_TO_EXPECTED_SUCCESSES = [
+  'iso-dh': 2,
+  'iso-kem': 2,
+  'nsl_pk': 1,
+  'ns_pk': 2,
+  'signal': 2
+]
+
+
+//////////////////////////////////////////////
+// Do not touch anything below this comment //
+//////////////////////////////////////////////
+
+@Library("fstarHelpers") _
+fstarVerifyAndTest(
+  symbolicDependencies: DEPENDENCY_DIRS,
+  makeOnlyDirs: VERIFICATION_ONLY_DIRS,
+  symbolicTestDirsToTestCount: TESTING_DIRS_TO_EXPECTED_SUCCESSES,
+  concreteDependencies: DEPENDENCY_DIRS,
+  concreteTestDirsToTestCount: TESTING_DIRS_TO_EXPECTED_SUCCESSES,
+  additionalDockerEnv: ['DY_HOME': '$WORKSPACE']
+)
